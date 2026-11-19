@@ -39,7 +39,7 @@ def control_pump(readings, setpoints, dt, state) -> float:
     
     if readings.soil_vwc <= 0.1:
         pump_speed = 50
-    elif readings.soil_vwc <= 0.11:
+    elif readings.soil_vwc <= 0.12:
         pump_speed = 10
     else:
         pump_speed = 0
