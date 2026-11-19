@@ -1,7 +1,10 @@
 """Pump control for the GHU-2 greenhouse (percent speed, 0 to 100).
 
-Owner: <name>
+Owner: Anna Browning
 """
+
+
+from student_controller_template.helpers import _clamp
 
 
 def control_pump(readings, setpoints, dt, state) -> float:
@@ -33,4 +36,12 @@ def control_pump(readings, setpoints, dt, state) -> float:
     # before you return it:
     #   1. At the top of this file, add "from .helpers import _clamp".
     #   2. Return "_clamp(u, 0.0, 100.0)", where u is your command.
-    return 0.0
+    
+    if readings.soil_vwc <= 0.1:
+        pump_speed = 100
+    elif readings.soil_vwc <= 0.7:
+        pump_speed = 50
+    else:
+        pump_speed = 0
+
+    return _clamp(pump_speed, 0.0, 100.0)

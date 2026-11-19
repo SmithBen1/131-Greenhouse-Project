@@ -60,7 +60,7 @@ from martian_greenhouse_sim.simulation import (  # noqa: E402
 # GUI). Pass --seed N to fly a different mission. The graded test flies several
 # missions with seeds you cannot see. The physics are the same. The weather and
 # fault timing are different.
-PRACTICE_SEED = 42
+PRACTICE_SEED = 4
 DAYS = 30
 MISSION_FAULTS = None  # standard mission
 

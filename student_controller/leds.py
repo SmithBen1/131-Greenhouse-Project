@@ -1,8 +1,9 @@
 """LED control for the GHU-2 greenhouse (percent intensity, 0 to 100).
 
-Owner: <name>
+Owner: Liam Gray
 """
 
+from student_controller.helpers import _clamp
 
 def control_leds(readings, setpoints, dt, state) -> float:
     """Return the LED intensity for this tick, a number in [0, 100].
@@ -33,4 +34,12 @@ def control_leds(readings, setpoints, dt, state) -> float:
     # before you return it:
     #   1. At the top of this file, add "from .helpers import _clamp".
     #   2. Return "_clamp(u, 0.0, 100.0)", where u is your command.
-    return 0.0
+
+    if readings.par_umol_m2_s <= 150:
+        light_intensity = 100
+    elif readings.par_umol_m2_s <= 200:
+        light_intensity = 50
+    else:
+        light_intensity = 0
+
+    return _clamp(light_intensity, 0.0, 100.0)
