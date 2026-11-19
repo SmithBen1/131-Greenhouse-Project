@@ -38,9 +38,9 @@ def control_pump(readings, setpoints, dt, state) -> float:
     #   2. Return "_clamp(u, 0.0, 100.0)", where u is your command.
     
     if readings.soil_vwc <= 0.1:
-        pump_speed = 100
-    elif readings.soil_vwc <= 0.7:
         pump_speed = 50
+    elif readings.soil_vwc <= 0.2:
+        pump_speed = 20
     else:
         pump_speed = 0
 

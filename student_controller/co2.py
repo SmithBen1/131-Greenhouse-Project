@@ -37,12 +37,21 @@ def control_co2(readings, setpoints, dt, state) -> float:
     #   1. At the top of this file, add "from .helpers import _clamp".
     #   2. Return "_clamp(u, 0.0, 100.0)", where u is your command.
 
-    if readings.co2_ppm_primary <= 800:
-        co2_valve = 100
-    elif readings.co2_ppm_primary <= 1000:
-        co2_valve = 50
+        
+    if (readings.co2_ppm_primary > 800 and readings.co2_ppm_primary < 1000) and (readings.co2_ppm_backup > 800 and readings.co2_ppm_backup < 1000):
+        if readings.co2_ppm_primary <= 800:
+            co2_valve = 50
+        elif readings.co2_ppm_primary <= 900:
+            co2_valve = 15
+        else:
+            co2_valve = 0
     else:
-        co2_valve = 0
+        if readings.co2_ppm_backup <= 800:
+            co2_valve = 50
+        elif readings.co2_ppm_backup <= 900:
+            co2_valve = 15
+        else:
+            co2_valve = 0
 
     return _clamp(co2_valve, 0.0, 100.0)
 

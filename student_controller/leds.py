@@ -37,8 +37,8 @@ def control_leds(readings, setpoints, dt, state) -> float:
 
     if readings.par_umol_m2_s <= 150:
         light_intensity = 100
-    elif readings.par_umol_m2_s <= 200:
-        light_intensity = 50
+    elif readings.par_umol_m2_s <= 300:
+        light_intensity = 75
     else:
         light_intensity = 0
 
