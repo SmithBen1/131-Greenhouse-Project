@@ -45,19 +45,19 @@ def control_heater(readings, setpoints, dt, state) -> float:
     # file by itself stops with "attempted relative import with no known
     # parent package".
     if setpoints.is_daytime:
-        error = 22 - readings.temperature_c
+        error = 23 - readings.temperature_c
     else:
         error = 18 - readings.temperature_c
 
     if error <= 0:
         heater_power = 0.0
     elif error <= 1:
-        heater_power = 20.0
+        heater_power = 25.0
     elif error <= 2:
-        heater_power = 40.0
+        heater_power = 50.0
     elif error <= 4:
-        heater_power = 60.0
+        heater_power = 75.0
     else:
-        heater_power = 80.0
+        heater_power = 100.0
 
     return _clamp(heater_power, 0.0, 100.0)

@@ -1,6 +1,6 @@
 """Hardware selection for the GHU-2 greenhouse.
 
-Owner: <name>
+Owner: Ben Smith
 
 Your team's Milestone 2 glazing choice and heater rating. The simulator and
 the acceptance test both read this file, so the mission your controller flies

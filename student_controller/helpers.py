@@ -2,9 +2,9 @@
 
 Course      : ENGR 13100
 Assignment  : Team Project M4: Controller Implementation
-Team ID     : <team>
-Author(s)   : <names>
-Actuator owners: heater <name> / LEDs <name> / CO2 valve <name> / pump <name>
+Team ID     : 04
+Author(s)   : Ben Smith, Cassidy Oconnell, Liam Gray, Anna Browning
+Actuator owners: heater: Ben Smith / LEDs: Liam Gray / CO2 valve: Cassidy Oconnell / pump: Anna Browning
 Contributors: <anyone else who helped, including AI tools per your AI Use Log>
 
 Academic Integrity Statement:
