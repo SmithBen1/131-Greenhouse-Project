@@ -3,7 +3,7 @@
 Owner: Liam Gray
 """
 
-from student_controller.helpers import _clamp
+from .helpers import _clamp
 
 def control_leds(readings, setpoints, dt, state) -> float:
     """Return the LED intensity for this tick, a number in [0, 100].

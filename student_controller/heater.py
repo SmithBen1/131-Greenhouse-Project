@@ -4,7 +4,7 @@ Owner: Ben Smith
 """
 
 
-from student_controller.helpers import _clamp
+from .helpers import _clamp
 
 
 def control_heater(readings, setpoints, dt, state) -> float:
